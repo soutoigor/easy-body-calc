@@ -8,6 +8,7 @@
       "ESNext.AsyncIterable",
       "DOM"
     ],
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
@@ -24,6 +25,7 @@
       ]
     },
     "types": [
+      "jest",
       "@nuxt/types",
       "@types/node"
     ]
