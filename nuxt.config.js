@@ -29,5 +29,9 @@ export default {
     exposeConfig: false,
     config: {},
   },
-  build: {},
+  build: {
+    babel: {
+      plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+    },
+  },
 }
