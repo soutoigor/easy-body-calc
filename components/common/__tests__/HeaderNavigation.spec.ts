@@ -1,35 +1,27 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import Home from '@/pages/index.vue'
-import AppLogo from '@/components/AppLogo.vue'
-import AppButton from '@/components/AppButton.vue'
+import HeaderNavigation from '@/components/common/HeaderNavigation.vue'
 import { siteMap } from '@/utils/siteMap'
 
 const mountComponent = () =>
-  mount(Home, {
+  mount(HeaderNavigation, {
     stubs: {
       NuxtLink: RouterLinkStub,
     },
   })
 
-describe('Home', () => {
-  it('should mount the component', () => {
+describe('HeaderNavigation', () => {
+  it('should mount component', () => {
     const wrapper = mountComponent()
 
     expect(wrapper.vm).toBeDefined()
   })
 
-  it('should display the AppLogo', () => {
-    const wrapper = mountComponent()
-
-    expect(wrapper.findComponent(AppLogo)).toBeTruthy()
-  })
-
-  it('should display buttons for all siteMap', () => {
+  it('should display links for all siteMap', () => {
     const wrapper = mountComponent()
 
     const siteMapList = Object.values(siteMap)
     const links = wrapper.findAllComponents(RouterLinkStub)
-    const buttons = wrapper.findAllComponents(AppButton)
+    const buttons = wrapper.findAll('li')
 
     expect(buttons.length).toBe(siteMapList.length)
 
@@ -37,5 +29,15 @@ describe('Home', () => {
       expect(links.at(index).props().to).toBe(url)
       expect(wrapper.text()).toContain(label)
     })
+  })
+
+  it('should emit "navigate" on link click', async () => {
+    const wrapper = mountComponent()
+
+    const link = wrapper.findAll('li').at(0)
+
+    await link.trigger('click')
+
+    expect(wrapper.emitted('navigate')).toBeTruthy()
   })
 })
