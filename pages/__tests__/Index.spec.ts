@@ -1,7 +1,7 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import Home from '@/pages/index.vue'
-import AppLogo from '@/components/AppLogo.vue'
-import AppButton from '@/components/AppButton.vue'
+import AppLogo from '@/components/common/AppLogo.vue'
+import AppButton from '@/components/common/AppButton.vue'
 import { siteMap } from '@/utils/siteMap'
 
 const mountComponent = () =>

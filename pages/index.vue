@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col lg:flex-row items-center justify-around px-6 lg:justify-around bg-home-mobile sm:bg-home-desktop min-h-screen"
+    class="flex flex-col lg:flex-row items-center justify-around lg:justify-around bg-home-mobile sm:bg-home-desktop min-h-screen"
   >
     <div>
       <h1>
@@ -31,8 +31,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import AppLogo from '@/components/AppLogo.vue'
-import AppButton from '@/components/AppButton.vue'
+import AppLogo from '@/components/common/AppLogo.vue'
+import AppButton from '@/components/common/AppButton.vue'
 import { siteMap } from '@/utils/siteMap'
 
 export default defineComponent({
@@ -40,6 +40,7 @@ export default defineComponent({
     AppLogo,
     AppButton,
   },
+  layout: 'home',
   setup() {
     return {
       siteMap: Object.values(siteMap),

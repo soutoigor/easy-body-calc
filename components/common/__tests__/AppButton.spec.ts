@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AppButton from '@/components/AppButton.vue'
+import AppButton from '@/components/common/AppButton.vue'
 
 describe('AppButton', () => {
   it('should mount the component AppButton', () => {
