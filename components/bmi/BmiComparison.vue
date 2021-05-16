@@ -1,15 +1,19 @@
 <template>
   <table class="table">
     <thead>
-      <tr class="thead__tr">
-        <th class="th">value</th>
-        <th class="th">result</th>
+      <tr class="table__thead-tr">
+        <th class="table__th">value</th>
+        <th class="table__th">result</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="{ value, result } of comparisonData" :key="value" class="tr">
-        <td class="td">{{ value }}</td>
-        <td class="td">{{ result }}</td>
+      <tr
+        v-for="{ value, result } of comparisonData"
+        :key="value"
+        class="table__tr"
+      >
+        <td class="table__td">{{ value }}</td>
+        <td class="table__td">{{ result }}</td>
       </tr>
     </tbody>
   </table>
@@ -51,7 +55,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.thead__tr {
+.table__thead-tr {
   @apply border-b-2 border-gray-400 border-opacity-50;
 }
 
@@ -59,16 +63,16 @@ export default defineComponent({
   @apply table-fixed w-full;
 }
 
-.th {
+.table__th {
   @apply w-1/2 text-2xl text-turbo even:border-l-2 odd:border-r-2
    border-gray-400 border-opacity-50 py-3;
 }
 
-.tr {
+.table__tr {
   @apply border-b-2 last:border-b-0 border-gray-400 border-opacity-50;
 }
 
-.td {
+.table__td {
   @apply w-1/2 text-xl py-5 text-center h-8 even:border-l-2
   odd:border-r-2 border-gray-400 border-opacity-50;
 }

@@ -40,10 +40,10 @@ export default defineComponent({
 
 <style scoped>
 .button {
-  @apply outline-none transition-all duration-500 transform
-  hover:bg-opacity-90 active:scale-y-105 shadow-md text-xl
-  py-3 px-2 font-bold uppercase tracking-wide rounded-xl w-full
-  disabled:bg-gray-500 disabled:text-black disabled:shadow-none;
+  @apply outline-none transition-all duration-500 transform;
+  @apply hover:bg-opacity-90 active:scale-y-105 shadow-md text-xl;
+  @apply py-3 px-2 font-bold uppercase tracking-wide rounded-xl w-full;
+  @apply disabled:bg-gray-500 disabled:text-black disabled:shadow-none;
 }
 
 .primary {
@@ -53,5 +53,4 @@ export default defineComponent({
 .secondary {
   @apply bg-black bg-opacity-40 border border-turbo;
 }
-
 </style>

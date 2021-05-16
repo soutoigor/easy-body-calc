@@ -1,16 +1,16 @@
 <template>
-  <header class="flex items-center justify-between h-24 md:h-36">
+  <header class="header">
     <NuxtLink to="/" class="flex-1">
       <AppLogo small />
     </NuxtLink>
     <button
       data-testid="open-menu"
-      class="md:hidden"
+      class="header__menu-button"
       @click="setIsDrawerOpen(true)"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-12 w-h-12 text-turbo"
+        class="header__icon"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -21,17 +21,13 @@
         />
       </svg>
     </button>
-    <HeaderNavigation class="flex-1 hidden md:flex" />
+    <HeaderNavigation class="header__navigation" />
     <transition name="drawer">
-      <div
-        v-show="isDrawerOpen"
-        data-testid="drawer"
-        class="absolute right-0 h-screen top-0 w-screen bg-gray-700 shadow-2xl z-50"
-      >
-        <button class="absolute right-5 top-5" @click="setIsDrawerOpen(false)">
+      <div v-show="isDrawerOpen" data-testid="drawer" class="header__drawer">
+        <button class="header__close-menu" @click="setIsDrawerOpen(false)">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 text-turbo"
+            class="header__icon"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -43,7 +39,7 @@
           </svg>
         </button>
         <HeaderNavigation
-          class="mt-10 h-1/2"
+          class="header__mobile-navigation"
           @navigate="setIsDrawerOpen(false)"
         />
       </div>
@@ -78,6 +74,34 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.header {
+  @apply flex items-center justify-between h-24 md:h-36;
+}
+
+.header__menu-button {
+  @apply md:hidden;
+}
+
+.header__icon {
+  @apply h-12 w-12 text-turbo;
+}
+
+.header__navigation {
+  @apply flex-1 hidden md:flex;
+}
+
+.header__drawer {
+  @apply absolute right-0 h-screen top-0 w-screen bg-gray-700 shadow-2xl z-50;
+}
+
+.header__close-menu {
+  @apply absolute right-5 top-5;
+}
+
+.header__mobile-navigation {
+  @apply mt-10 h-1/2;
+}
+
 .drawer-leave-active,
 .drawer-enter-active {
   @apply transition-all duration-500 ease-in-out;
