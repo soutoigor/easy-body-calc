@@ -1,18 +1,11 @@
 <template>
-  <div
-    class="border border-turbo rounded-lg flex justify-center items-center h-60 w-full"
-  >
-    <div class="gap-7 flex flex-col items-center">
-      <span class="text-7xl italic font-black text-turbo">
-        {{ formattedResult }}
-      </span>
-      <span
-        data-testid="result"
-        class="italic capitalize font-bold text-3xl lg:text-5xl"
-      >
-        {{ resultText }}
-      </span>
-    </div>
+  <div class="result">
+    <span class="result__value">
+      {{ formattedResult }}
+    </span>
+    <span data-testid="result" class="result__text">
+      {{ resultText }}
+    </span>
   </div>
 </template>
 
@@ -47,3 +40,18 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.result {
+  @apply border border-turbo rounded-lg h-60 w-full;
+  @apply gap-7 flex flex-col items-center justify-center;
+}
+
+.result__value {
+  @apply text-7xl italic font-black text-turbo;
+}
+
+.result__text {
+  @apply italic capitalize font-bold text-3xl lg:text-5xl;
+}
+</style>

@@ -44,7 +44,9 @@ export default defineComponent({
     }
 
     const updateValue = (event: InputEvent) => {
-      const formattedField = stringToNumber((<HTMLInputElement>event.target).value)
+      const formattedField = stringToNumber(
+        (event.target as HTMLInputElement).value
+      )
 
       emit('input', formattedField)
     }
@@ -63,10 +65,10 @@ export default defineComponent({
 }
 
 .field__input {
-  @apply w-full mt-1 py-3 px-3 text-xl font-semibold rounded-xl bg-black
-  bg-opacity-50 border border-transparent focus:border-turbo
-  focus:bg-opacity-100 outline-none focus:shadow-lg
-  transition-all ease-in duration-200 placeholder-gray-500;
+  @apply w-full mt-1 py-3 px-3 text-xl font-semibold rounded-xl bg-black;
+  @apply bg-opacity-50 border border-transparent focus:border-turbo;
+  @apply focus:bg-opacity-100 outline-none focus:shadow-lg;
+  @apply transition-all ease-in duration-200 placeholder-gray-500;
 }
 
 .field__input--active {

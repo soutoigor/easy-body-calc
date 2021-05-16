@@ -1,5 +1,5 @@
 <template>
-  <form class="flex flex-col gap-8" @submit.prevent="sendResult">
+  <form class="bmi-form" @submit.prevent="sendResult">
     <InputNumber
       v-model="form.height"
       placeholder="Ex: 164"
@@ -59,3 +59,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.bmi-form {
+  @apply flex flex-col gap-8;
+}
+</style>

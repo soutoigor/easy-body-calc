@@ -1,9 +1,9 @@
 <template>
   <Fragment>
-    <section class="w-full lg:w-1/3">
-      <h2 class="mb-4 text-2xl font-bold">{{ formTitle }}</h2>
+    <section class="calc-section">
+      <h2 class="calc-section__title">{{ formTitle }}</h2>
       <transition name="rotate">
-        <div v-if="result" class="flex flex-col items-center gap-8">
+        <div v-if="result" class="calc-section__result">
           <BmiResult :result="result" />
           <AppButton
             data-testid="calculate-again"
@@ -16,9 +16,9 @@
         <BmiForm v-else @result="setResult" />
       </transition>
     </section>
-    <aside class="flex justify-center lg:w-1/3">
+    <aside class="explanation-section">
       <div v-if="result">
-        <h3 class="mb-6 text-2xl font-bold">Comparations:</h3>
+        <h3 class="explanation-section__title">Comparations:</h3>
         <BmiComparison />
       </div>
       <AppExplanation v-else>
@@ -83,6 +83,26 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.calc-section {
+  @apply w-full lg:w-1/3;
+}
+
+.calc-section__title {
+  @apply mb-4 text-2xl font-bold;
+}
+
+.calc-section__result {
+  @apply flex flex-col items-center gap-8;
+}
+
+.explanation-section {
+  @apply flex justify-center lg:w-1/3;
+}
+
+.explanation-section__title {
+  @apply mb-6 text-2xl font-bold;
+}
+
 .rotate-leave-active,
 .rotate-enter-active {
   @apply transition-all duration-500 ease-linear;
