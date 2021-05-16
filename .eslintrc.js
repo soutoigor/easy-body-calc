@@ -10,6 +10,7 @@ module.exports = {
     'plugin:nuxt/recommended',
   ],
   plugins: [],
-  // add your custom rules here
-  rules: {},
+  rules: {
+    'vue/no-multiple-template-root': 'off',
+  },
 }

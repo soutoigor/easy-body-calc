@@ -57,6 +57,7 @@ import AppLogo from '@/components/common/AppLogo.vue'
 import HeaderNavigation from '@/components/common/HeaderNavigation.vue'
 
 export default defineComponent({
+  name: 'AppHeader',
   components: {
     AppLogo,
     HeaderNavigation,

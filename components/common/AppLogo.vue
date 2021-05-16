@@ -16,6 +16,7 @@
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
 
 export default defineComponent({
+  name: 'AppLogo',
   props: {
     small: {
       type: Boolean as PropType<boolean>,

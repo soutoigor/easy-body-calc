@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'easy-body-calc',
+    title: 'Easy Body Calc',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
