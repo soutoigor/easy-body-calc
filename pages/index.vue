@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col lg:flex-row items-center justify-around lg:justify-around bg-home-mobile sm:bg-home-desktop min-h-screen"
+    class="flex px-6 flex-col lg:flex-row items-center justify-around lg:justify-around bg-home-mobile sm:bg-home-desktop min-h-screen"
   >
     <div>
       <h1>

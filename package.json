@@ -17,7 +17,8 @@
     "@nuxtjs/composition-api": "^0.23.4",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "vue-fragment": "^1.5.2"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",
