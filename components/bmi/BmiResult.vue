@@ -1,8 +1,6 @@
 <template>
   <div class="result">
-    <span class="result__value">
-      {{ formattedResult }}
-    </span>
+    <span class="result__value"> {{ formattedResult }}% </span>
     <span data-testid="result" class="result__text">
       {{ resultText }}
     </span>
