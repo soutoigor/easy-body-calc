@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="modal__backdrop" @click.self="emitClose">
+    <div class="modal__backdrop" data-testid="backdrop" @click.self="emitClose">
       <article
         class="modal__container"
         role="dialog"
@@ -11,7 +11,11 @@
           <h1 class="modal__title">
             <slot name="title" />
           </h1>
-          <button class="modal__close" @click="emitClose">
+          <button
+            class="modal__close"
+            data-testid="closeButton"
+            @click="emitClose"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="modal__close-icon"
@@ -54,8 +58,8 @@ export default defineComponent({
 
 <style scoped>
 .modal__backdrop {
- @apply fixed z-50 top-0 bottom-0 left-0 right-0 bg-gray-900 bg-opacity-60;
- @apply flex justify-center items-center;
+  @apply fixed z-50 top-0 bottom-0 left-0 right-0 bg-gray-900 bg-opacity-60;
+  @apply flex justify-center items-center;
 }
 
 .modal__container {

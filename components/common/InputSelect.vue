@@ -4,6 +4,7 @@
     <select
       id="select"
       class="field__input"
+      data-testid="field"
       :class="{ 'field__input--active': !!value }"
       v-bind="$attrs"
       :value="value"

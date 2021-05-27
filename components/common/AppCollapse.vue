@@ -3,7 +3,8 @@
     <header
       class="collapse__header"
       :class="{ 'collapse__header--active': active }"
-      @click="toggleActive"
+      data-testid="header"
+      @click="active = !active"
     >
       <h1>{{ title }}</h1>
       <svg
@@ -23,7 +24,7 @@
       </svg>
     </header>
     <transition name="expand">
-      <main v-if="active" class="collapse__content">
+      <main v-if="active" data-testid="content" class="collapse__content">
         <slot />
       </main>
     </transition>
@@ -34,6 +35,7 @@
 import { ref, PropType, defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
+  name: 'AppCollapse',
   props: {
     title: {
       type: String as PropType<string>,
@@ -44,13 +46,8 @@ export default defineComponent({
   setup() {
     const active = ref<boolean>(false)
 
-    const toggleActive = () => {
-      active.value = !active.value
-    }
-
     return {
       active,
-      toggleActive,
     }
   },
 })

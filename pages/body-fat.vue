@@ -64,8 +64,8 @@ import AppExplanation from '@/components/common/AppExplanation.vue'
 import MeasureTips from '@/components/common/MeasureTips.vue'
 import AppButton from '@/components/common/AppButton.vue'
 import { defineComponent, reactive, computed } from '@nuxtjs/composition-api'
-import { Result } from '@/components/bmi/interface'
 import frag from 'vue-frag'
+import { Result } from '../components/body-fat/interface'
 
 export default defineComponent({
   name: 'BodyFat',

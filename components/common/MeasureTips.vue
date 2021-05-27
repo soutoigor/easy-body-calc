@@ -4,7 +4,7 @@
       How to get the measures
     </AppButton>
     <AppModal v-show="tipsModal" @close="setTipsModal(false)">
-      <template #title> How to get the measures </template>
+      <template #title>How to get the measures</template>
       <template #content>
         <AppCollapse
           v-for="{ TITLE, IMAGE, DESCRIPTION } of measureTips"
