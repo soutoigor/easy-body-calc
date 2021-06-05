@@ -20,9 +20,11 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
 
+type Value = string | number
+
 interface Option {
   label: string
-  value: string
+  value: Value
 }
 
 export type Items = Array<Option>
@@ -39,7 +41,7 @@ export default defineComponent({
       default: '',
     },
     value: {
-      type: String as PropType<string>,
+      type: [String, Number] as PropType<Value>,
       required: false,
       default: '',
     },

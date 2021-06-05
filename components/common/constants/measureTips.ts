@@ -3,6 +3,7 @@ import weight from '@/assets/images/weight.jpg'
 import hip from '@/assets/images/hip.jpg'
 import neck from '@/assets/images/neck.jpg'
 import abdomen from '@/assets/images/abdomen.jpg'
+import activities from '@/assets/images/activities.jpg'
 
 export const measureTips = {
   HEIGHT: {
@@ -41,6 +42,17 @@ export const measureTips = {
     DESCRIPTION: `
       Exhale all the air, but don't force the abdomen. And with a measuring tape, contour
       your waist right above your belly.
+    `,
+  },
+  ACTIVITIES: {
+    TITLE: 'Daily activities',
+    IMAGE: activities,
+    DESCRIPTION: `
+      • Sedentary: No daily exercise and stay seated most of the day <br />
+      • Slightly active: Light exercise 1-3 times/week and stay seated most of the day <br />
+      • Moderately active: Intense/moderate exercise 3-5 times/week and stay seated most of the day <br />
+      • Active: Intense/moderate exercise 3-5 times/week and stands most of the day <br />
+      • Very active: Intense exercise 5-7 times/week and stands most of the day <br />
     `,
   },
 }

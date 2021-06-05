@@ -13,7 +13,7 @@ const siteMap = {
   },
   CALORIES: {
     label: 'Daily calories',
-    url: '/daily-calories',
+    url: '/bmr-daily-calories',
   },
 }
 

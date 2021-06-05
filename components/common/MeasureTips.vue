@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <div>
     <AppButton text color="primary" @click="setTipsModal(true)">
       How to get the measures
@@ -11,8 +12,8 @@
           :key="TITLE"
           :title="TITLE"
         >
-          <img class="mx-auto mb-3" :src="IMAGE" :alt="TITLE" />
-          <p>{{ DESCRIPTION }}</p>
+          <img class="mx-auto mb-3 max-w-sm" :src="IMAGE" :alt="TITLE" />
+          <p v-html="DESCRIPTION" />
         </AppCollapse>
       </template>
     </AppModal>
