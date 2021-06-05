@@ -28,3 +28,16 @@ html, body, #app {
 ::-webkit-scrollbar-thumb:hover {
   background: #a0aec0;
 }
+
+.rotate-leave-active,
+.rotate-enter-active {
+  @apply transition-all duration-500 ease-linear;
+}
+.rotate-enter {
+  @apply absolute opacity-0;
+  transform: rotateY(180deg);
+}
+.rotate-leave-to {
+  @apply absolute opacity-0;
+  transform: rotateY(-180deg);
+}

@@ -1,5 +1,5 @@
 <template>
-  <Fragment>
+  <div v-frag>
     <section class="calc-section">
       <h2 class="calc-section__title">{{ formTitle }}</h2>
       <transition name="rotate">
@@ -13,7 +13,10 @@
             Calculate again
           </AppButton>
         </div>
-        <BmiForm v-else @result="setResult" />
+        <div v-else class="calc-section__form-container">
+          <BmiForm @result="setResult" />
+          <MeasureTips />
+        </div>
       </transition>
     </section>
     <aside class="explanation-section">
@@ -40,7 +43,7 @@
         </template>
       </AppExplanation>
     </aside>
-  </Fragment>
+  </div>
 </template>
 
 <script lang="ts">
@@ -49,8 +52,9 @@ import BmiResult from '@/components/bmi/BmiResult.vue'
 import BmiComparison from '@/components/bmi/BmiComparison.vue'
 import AppExplanation from '@/components/common/AppExplanation.vue'
 import AppButton from '@/components/common/AppButton.vue'
-import { Fragment } from 'vue-fragment'
+import MeasureTips from '@/components/common/MeasureTips.vue'
 import { defineComponent, ref, computed } from '@nuxtjs/composition-api'
+import frag from 'vue-frag'
 
 export default defineComponent({
   name: 'Bmi',
@@ -58,10 +62,11 @@ export default defineComponent({
     BmiForm,
     AppExplanation,
     BmiResult,
-    Fragment,
     AppButton,
     BmiComparison,
+    MeasureTips,
   },
+  directives: { frag },
   setup() {
     const result = ref<number>(0)
 
@@ -95,24 +100,15 @@ export default defineComponent({
   @apply flex flex-col items-center gap-8;
 }
 
+.calc-section__form-container {
+  @apply flex flex-col gap-7;
+}
+
 .explanation-section {
   @apply flex justify-center lg:w-1/3;
 }
 
 .explanation-section__title {
   @apply mb-6 text-2xl font-bold;
-}
-
-.rotate-leave-active,
-.rotate-enter-active {
-  @apply transition-all duration-500 ease-linear;
-}
-.rotate-enter {
-  @apply absolute opacity-0;
-  transform: rotateY(180deg);
-}
-.rotate-leave-to {
-  @apply absolute opacity-0;
-  transform: rotateY(-180deg);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <button
     :type="type"
-    :class="['button', color]"
+    :class="['button', color, text && 'text']"
     :disabled="disabled"
     @click="$emit('click')"
   >
@@ -33,6 +33,11 @@ export default defineComponent({
       required: false,
       default: false,
     },
+    text: {
+      type: Boolean as PropType<boolean>,
+      required: false,
+      default: false,
+    },
   },
   emits: ['click'],
 })
@@ -52,5 +57,17 @@ export default defineComponent({
 
 .secondary {
   @apply bg-black bg-opacity-40 border border-turbo;
+}
+
+.text {
+  @apply bg-opacity-0 hover:bg-opacity-10 border-transparent shadow-none;
+}
+
+.primary.text {
+  @apply text-turbo;
+}
+
+.secondary.text {
+  @apply text-white;
 }
 </style>
