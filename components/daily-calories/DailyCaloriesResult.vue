@@ -2,12 +2,12 @@
   <div class="result">
     <span class="result__text">Daily calories:</span>
     <span class="result__value">
-      {{ floor(calcResult.calories) }}
+      {{ calcResult.calories }}
     </span>
     <hr class="border-white border-opacity-50 w-3/5" />
     <span class="result__text">BMR:</span>
     <span class="result__value">
-      {{ floor(calcResult.bmr) }}
+      {{ calcResult.bmr }}
     </span>
   </div>
 </template>
@@ -22,11 +22,6 @@ export default defineComponent({
       type: Object as PropType<Result>,
       required: true,
     },
-  },
-  setup() {
-    const floor = (result: number) => Math.floor(result)
-
-    return { floor }
   },
 })
 </script>
