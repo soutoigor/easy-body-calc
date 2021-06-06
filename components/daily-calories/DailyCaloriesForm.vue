@@ -7,7 +7,7 @@
     />
     <InputNumber
       v-model="form.weight"
-      label="Weight (cm)"
+      label="Weight (kg)"
       data-testid="weight"
     />
     <InputNumber v-model="form.age" data-testid="age" label="Age" />
