@@ -1,11 +1,11 @@
-export type BiologicalSex = 'M' | 'F' | null
+export type BiologicalSex = 'M' | 'F'
 
 export interface BodyFat {
-  height: number | null
-  neck: number | null
-  abdomen: number | null
+  height: number
+  neck: number
+  abdomen: number
   biologicalSex: BiologicalSex
-  hip: number | null
+  hip: number
 }
 
 export interface MenCalc {
@@ -20,5 +20,5 @@ export interface WomenCalc extends MenCalc {
 
 export interface Result {
   result: number | null
-  biologicalSex: BiologicalSex
+  biologicalSex: BiologicalSex | null
 }

@@ -34,8 +34,8 @@ export default defineComponent({
   emits: ['result'],
   setup(_, { emit }) {
     const form = reactive<Bmi>({
-      height: null,
-      weight: null,
+      height: 0,
+      weight: 0,
     })
 
     const disabled = computed<boolean>(() => !form.height || !form.weight)

@@ -16,7 +16,7 @@ const items = [
 
 const label = 'Biological sex'
 
-const mountComponent = (value: BiologicalSex = null) =>
+const mountComponent = (value: BiologicalSex | null) =>
   mount(InputSelect, {
     propsData: {
       label,
@@ -61,7 +61,7 @@ describe('InputSelect', () => {
   })
 
   it('should emit the selected value', async () => {
-    const wrapper = mountComponent()
+    const wrapper = mountComponent(null)
 
     const options = wrapper.find('[data-testid="field"]').findAll('option')
 

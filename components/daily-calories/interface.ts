@@ -9,7 +9,7 @@ export interface Bmr {
 }
 
 export interface DailyCalories extends Bmr {
-  biologicalSex: BiologicalSex | null
+  biologicalSex: BiologicalSex
   activity: Activities
 }
 

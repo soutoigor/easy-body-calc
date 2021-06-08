@@ -55,11 +55,11 @@ export default defineComponent({
     ]
 
     const form = reactive<BodyFat>({
-      height: null,
-      neck: null,
-      biologicalSex: null,
-      abdomen: null,
-      hip: null,
+      height: 0,
+      neck: 0,
+      biologicalSex: 'M',
+      abdomen: 0,
+      hip: 0,
     })
 
     const isFemale = computed<boolean>(() => form.biologicalSex === 'F')
@@ -79,8 +79,8 @@ export default defineComponent({
       104.912
 
     const calculateBodyFat = (form: BodyFat) => {
-      if (isFemale.value) return getWomenBodyFat(form as WomenCalc)
-      return getMenBodyFat(form as MenCalc)
+      if (isFemale.value) return getWomenBodyFat(form)
+      return getMenBodyFat(form)
     }
 
     const sendResult = () => {

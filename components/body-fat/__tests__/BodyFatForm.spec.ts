@@ -38,7 +38,7 @@ describe('BodyFatForm', () => {
     expect(wrapper.vm['disabled']).toBe(false)
 
     form.biologicalSex = 'M'
-    form.hip = null
+    form.hip = 0
 
     wrapper.vm['form'].biologicalSex = form.biologicalSex
     wrapper.vm['form'].hip = form.hip
@@ -54,7 +54,7 @@ describe('BodyFatForm', () => {
       abdomen: 75,
       neck: 34,
       biologicalSex: 'M',
-      hip: null,
+      hip: 0,
     }
 
     wrapper.vm['form'].height = form.height

@@ -80,7 +80,7 @@ export default defineComponent({
       height: 0,
       weight: 0,
       age: 0,
-      biologicalSex: null,
+      biologicalSex: 'M',
       activity: 0,
     })
 
