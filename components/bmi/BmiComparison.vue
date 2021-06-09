@@ -21,29 +21,32 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
+import { BMI_RESULTS } from '@/constants/bmi'
+
+const { UNDERWEIGHT, NORMAL, OVERWEIGHT, OBESE, EXTREMELY_OBESE } = BMI_RESULTS
 
 export default defineComponent({
   setup() {
     const comparisonData = [
       {
         value: '<18.5',
-        result: 'underweight',
+        result: UNDERWEIGHT,
       },
       {
         value: '18.5~24.9',
-        result: 'normal',
+        result: NORMAL,
       },
       {
         value: '25~29.9',
-        result: 'overweight',
+        result: OVERWEIGHT,
       },
       {
         value: '30~34.9',
-        result: 'obese',
+        result: OBESE,
       },
       {
         value: '>35',
-        result: 'extremely obese',
+        result: EXTREMELY_OBESE,
       },
     ]
 

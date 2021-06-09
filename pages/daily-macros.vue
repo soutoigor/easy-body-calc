@@ -110,9 +110,7 @@ import AppButton from '@/components/common/AppButton.vue'
 import MeasureTips from '@/components/common/MeasureTips.vue'
 import { defineComponent, ref, computed } from '@nuxtjs/composition-api'
 import frag from 'vue-frag'
-import { Result } from '@/components/daily-macros/interface'
-
-type ResultData = Result | null
+import { TResultForm } from '@/types/dailyMacros'
 
 export default defineComponent({
   name: 'DailyMacros',
@@ -126,10 +124,10 @@ export default defineComponent({
   },
   directives: { frag },
   setup() {
-    const result = ref<ResultData>(null)
+    const result = ref<TResultForm>(null)
     const macrosModal = ref<boolean>(false)
 
-    const setResult = (value: ResultData) => {
+    const setResult = (value: TResultForm) => {
       result.value = value
     }
 

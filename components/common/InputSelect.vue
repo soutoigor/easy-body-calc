@@ -19,20 +19,12 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-
-type Value = string | number
-
-interface Option {
-  label: string
-  value: Value
-}
-
-export type Items = Array<Option>
+import { TSelectItems, TValue } from '@/types/selectOption'
 
 export default defineComponent({
   props: {
     items: {
-      type: Array as PropType<Items>,
+      type: Array as PropType<TSelectItems>,
       required: true,
     },
     label: {
@@ -41,7 +33,7 @@ export default defineComponent({
       default: '',
     },
     value: {
-      type: [String, Number] as PropType<Value>,
+      type: [String, Number] as PropType<TValue>,
       required: false,
       default: '',
     },

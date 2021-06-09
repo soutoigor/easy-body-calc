@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, useRoute } from '@nuxtjs/composition-api'
-import { siteMap } from '@/utils/siteMap'
+import { SITE_MAP } from '@/constants/siteMap'
 
 export default defineComponent({
   name: 'HeaderNavigation',
@@ -25,7 +25,7 @@ export default defineComponent({
     const isActualRoute = (url: string) => route.value?.path === url
 
     return {
-      siteMap: Object.values(siteMap),
+      siteMap: Object.values(SITE_MAP),
       isActualRoute,
     }
   },

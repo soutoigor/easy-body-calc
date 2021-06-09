@@ -65,10 +65,10 @@ import MeasureTips from '@/components/common/MeasureTips.vue'
 import AppButton from '@/components/common/AppButton.vue'
 import { defineComponent, reactive, computed } from '@nuxtjs/composition-api'
 import frag from 'vue-frag'
-import { Result } from '../components/body-fat/interface'
+import { IBodyFatResult } from '@/types/bodyFat'
 
 export default defineComponent({
-  name: 'BodyFat',
+  name: 'IBodyFat',
   components: {
     BodyFatForm,
     AppExplanation,
@@ -79,12 +79,12 @@ export default defineComponent({
   },
   directives: { frag },
   setup() {
-    const formResult = reactive<Result>({
+    const formResult = reactive<IBodyFatResult>({
       result: 0,
       biologicalSex: 'F',
     })
 
-    const setFormResult = ({ result, biologicalSex }: Result) => {
+    const setFormResult = ({ result, biologicalSex }: IBodyFatResult) => {
       formResult.result = result
       formResult.biologicalSex = biologicalSex
     }

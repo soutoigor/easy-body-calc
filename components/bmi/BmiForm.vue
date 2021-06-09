@@ -24,7 +24,7 @@
 import InputNumber from '@/components/common/InputNumber.vue'
 import AppButton from '@/components/common/AppButton.vue'
 import { computed, defineComponent, reactive } from '@nuxtjs/composition-api'
-import { Bmi } from './interface'
+import { IBmi } from '@/types/bmi'
 
 export default defineComponent({
   components: {
@@ -33,14 +33,14 @@ export default defineComponent({
   },
   emits: ['result'],
   setup(_, { emit }) {
-    const form = reactive<Bmi>({
-      height: null,
-      weight: null,
+    const form = reactive<IBmi>({
+      height: 0,
+      weight: 0,
     })
 
     const disabled = computed<boolean>(() => !form.height || !form.weight)
 
-    const calculateBmi = ({ height, weight }: Bmi) => {
+    const calculateBmi = ({ height, weight }: IBmi) => {
       if (height && weight) return (weight / height / height) * 10000
       return 0
     }

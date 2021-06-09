@@ -9,19 +9,21 @@
 import men from '@/assets/images/bf-men.jpg'
 import women from '@/assets/images/bf-women.jpg'
 import { computed, defineComponent, PropType } from '@nuxtjs/composition-api'
-import { BiologicalSex } from './interface'
+import { TBiologicalSex } from '@/types/biologicalSex'
+import { BIOLOGICAL_SEX } from '@/constants/biologicalSex'
 
 export default defineComponent({
   props: {
     biologicalSex: {
-      type: String as PropType<BiologicalSex>,
+      type: String as PropType<TBiologicalSex>,
       required: true,
-      validator: (value: string) => ['M', 'F'].includes(value),
+      validator: (value: string) =>
+        Object.values(BIOLOGICAL_SEX).includes(value),
     },
   },
   setup({ biologicalSex }) {
     const comparisonPictureUrl = computed(() =>
-      biologicalSex === 'M' ? men : women
+      biologicalSex === BIOLOGICAL_SEX.MALE ? men : women
     )
 
     return {

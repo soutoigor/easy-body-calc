@@ -14,7 +14,7 @@
     <InputSelect
       v-model="form.biologicalSex"
       label="Biological sex"
-      :items="biologicalSexItems"
+      :items="BIOLOGICAL_SEX_ITEMS"
     />
     <InputNumber
       v-show="isFemale"
@@ -30,10 +30,13 @@
 
 <script lang="ts">
 import InputNumber from '@/components/common/InputNumber.vue'
-import InputSelect, { Items } from '@/components/common/InputSelect.vue'
+import InputSelect from '@/components/common/InputSelect.vue'
 import AppButton from '@/components/common/AppButton.vue'
 import { computed, defineComponent, reactive } from '@nuxtjs/composition-api'
-import { BodyFat, WomenCalc, MenCalc } from './interface'
+import { IBodyFat, IWomenCalc, IMenCalc } from '@/types/bodyFat'
+import { BIOLOGICAL_SEX, BIOLOGICAL_SEX_ITEMS } from '@/constants/biologicalSex'
+
+const { MALE, FEMALE } = BIOLOGICAL_SEX
 
 export default defineComponent({
   components: {
@@ -43,26 +46,15 @@ export default defineComponent({
   },
   emits: ['result'],
   setup(_, { emit }) {
-    const biologicalSexItems: Items = [
-      {
-        label: 'Male',
-        value: 'M',
-      },
-      {
-        label: 'Female',
-        value: 'F',
-      },
-    ]
-
-    const form = reactive<BodyFat>({
-      height: null,
-      neck: null,
-      biologicalSex: null,
-      abdomen: null,
-      hip: null,
+    const form = reactive<IBodyFat>({
+      height: 0,
+      neck: 0,
+      biologicalSex: MALE,
+      abdomen: 0,
+      hip: 0,
     })
 
-    const isFemale = computed<boolean>(() => form.biologicalSex === 'F')
+    const isFemale = computed<boolean>(() => form.biologicalSex === FEMALE)
 
     const disabled = computed<boolean>(() =>
       Object.entries(form).some(([key, value]) =>
@@ -70,17 +62,17 @@ export default defineComponent({
       )
     )
 
-    const getMenBodyFat = ({ abdomen, neck, height }: MenCalc) =>
+    const getMenBodyFat = ({ abdomen, neck, height }: IMenCalc) =>
       86.01 * Math.log10(abdomen - neck) - 70.041 * Math.log10(height) + 30.3
 
-    const getWomenBodyFat = ({ abdomen, hip, neck, height }: WomenCalc) =>
+    const getWomenBodyFat = ({ abdomen, hip, neck, height }: IWomenCalc) =>
       163.205 * Math.log10(abdomen + hip - neck) -
       97.684 * Math.log10(height) -
       104.912
 
-    const calculateBodyFat = (form: BodyFat) => {
-      if (isFemale.value) return getWomenBodyFat(form as WomenCalc)
-      return getMenBodyFat(form as MenCalc)
+    const calculateBodyFat = (form: IBodyFat) => {
+      if (isFemale.value) return getWomenBodyFat(form)
+      return getMenBodyFat(form)
     }
 
     const sendResult = () => {
@@ -94,7 +86,7 @@ export default defineComponent({
       form,
       disabled,
       isFemale,
-      biologicalSexItems,
+      BIOLOGICAL_SEX_ITEMS,
     }
   },
 })

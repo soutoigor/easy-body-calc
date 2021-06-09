@@ -4,7 +4,10 @@ import BodyFatForm from '@/components/body-fat/BodyFatForm.vue'
 import InputNumber from '@/components/common/InputNumber.vue'
 import InputSelect from '@/components/common/InputSelect.vue'
 import AppButton from '@/components/common/AppButton.vue'
-import { BodyFat } from './../interface'
+import { IBodyFat } from '@/types/bodyFat'
+import { BIOLOGICAL_SEX } from '@/constants/biologicalSex'
+
+const { MALE, FEMALE } = BIOLOGICAL_SEX
 
 describe('BodyFatForm', () => {
   it('should mount the component BodyFatForm', () => {
@@ -16,16 +19,16 @@ describe('BodyFatForm', () => {
     expect(wrapper.findComponent(AppButton).exists()).toBe(true)
   })
 
-  it('should disable "calculate" button if form is not filled correctly', async () => {
+  it('should disable "calculate" button if form is not filled correctly', () => {
     const wrapper = mount(BodyFatForm)
 
     expect(wrapper.vm['disabled']).toBe(true)
 
-    const form: BodyFat = {
+    const form: IBodyFat = {
       height: 30,
       abdomen: 30,
       neck: 30,
-      biologicalSex: 'F',
+      biologicalSex: FEMALE,
       hip: 30,
     }
 
@@ -37,8 +40,8 @@ describe('BodyFatForm', () => {
 
     expect(wrapper.vm['disabled']).toBe(false)
 
-    form.biologicalSex = 'M'
-    form.hip = null
+    form.biologicalSex = MALE
+    form.hip = 0
 
     wrapper.vm['form'].biologicalSex = form.biologicalSex
     wrapper.vm['form'].hip = form.hip
@@ -49,12 +52,12 @@ describe('BodyFatForm', () => {
   it('should emit "result" with the right Body Fat according with form values form male', async () => {
     const wrapper = mount(BodyFatForm)
 
-    const form: BodyFat = {
+    const form: IBodyFat = {
       height: 164,
       abdomen: 75,
       neck: 34,
-      biologicalSex: 'M',
-      hip: null,
+      biologicalSex: MALE,
+      hip: 0,
     }
 
     wrapper.vm['form'].height = form.height
@@ -75,11 +78,11 @@ describe('BodyFatForm', () => {
   it('should emit "result" with the right Body Fat according with form values form female', async () => {
     const wrapper = mount(BodyFatForm)
 
-    const form: BodyFat = {
+    const form: IBodyFat = {
       height: 164,
       abdomen: 75,
       neck: 34,
-      biologicalSex: 'F',
+      biologicalSex: FEMALE,
       hip: 100,
     }
 

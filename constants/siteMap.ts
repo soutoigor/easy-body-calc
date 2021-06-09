@@ -1,4 +1,4 @@
-const siteMap = {
+export const SITE_MAP = {
   BMI: {
     label: 'BMI rate',
     url: '/bmi',
@@ -16,5 +16,3 @@ const siteMap = {
     url: '/bmr-daily-calories',
   },
 }
-
-export { siteMap }

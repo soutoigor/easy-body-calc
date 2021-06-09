@@ -11,36 +11,49 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from '@nuxtjs/composition-api'
-import { Result } from './interface'
+import { IBodyFatResult } from '@/types/bodyFat'
+import { BODY_FAT_RESULTS } from '@/constants/bodyFat'
+import { BIOLOGICAL_SEX } from '@/constants/biologicalSex'
+
+const { MALE } = BIOLOGICAL_SEX
+
+const {
+  COMPETITOR,
+  VERY_GOOD,
+  GOOD,
+  IN_AVERAGE,
+  ABOVE_AVERAGE,
+  OBESE,
+} = BODY_FAT_RESULTS
 
 export default defineComponent({
   props: {
     calcResult: {
-      type: Object as PropType<Result>,
+      type: Object as PropType<IBodyFatResult>,
       required: true,
     },
   },
   setup({ calcResult: { result, biologicalSex } }) {
     const getMenValues = (value: number) => {
-      if (value <= 6) return 'competitor'
-      if (value > 6 && value < 10) return 'very good shape'
-      if (value >= 10 && value < 15) return 'good shape'
-      if (value >= 15 && value < 20) return 'in average'
-      if (value >= 20 && value < 26) return 'above average'
-      return 'obese'
+      if (value <= 6) return COMPETITOR
+      if (value > 6 && value < 10) return VERY_GOOD
+      if (value >= 10 && value < 15) return GOOD
+      if (value >= 15 && value < 20) return IN_AVERAGE
+      if (value >= 20 && value < 26) return ABOVE_AVERAGE
+      return OBESE
     }
 
     const getWomenValues = (value: number) => {
-      if (value <= 12) return 'competitor'
-      if (value > 12 && value <= 15) return 'very good shape'
-      if (value > 15 && value <= 20) return 'good shape'
-      if (value > 20 && value <= 25) return 'in average'
-      if (value > 25 && value <= 30) return 'above average'
-      return 'obese'
+      if (value <= 12) return COMPETITOR
+      if (value > 12 && value <= 15) return VERY_GOOD
+      if (value > 15 && value <= 20) return GOOD
+      if (value > 20 && value <= 25) return IN_AVERAGE
+      if (value > 25 && value <= 30) return ABOVE_AVERAGE
+      return OBESE
     }
 
     const getResultText = (value: number) => {
-      if (biologicalSex === 'M') return getMenValues(value)
+      if (biologicalSex === MALE) return getMenValues(value)
       return getWomenValues(value)
     }
 
