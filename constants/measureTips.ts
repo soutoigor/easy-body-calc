@@ -5,7 +5,7 @@ import neck from '@/assets/images/neck.jpg'
 import abdomen from '@/assets/images/abdomen.jpg'
 import activities from '@/assets/images/activities.jpg'
 
-export const measureTips = {
+export const MEASURE_TIPS = {
   HEIGHT: {
     TITLE: 'Height',
     IMAGE: height,

@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import HeaderNavigation from '@/components/common/HeaderNavigation.vue'
-import { siteMap } from '@/utils/siteMap'
+import { SITE_MAP } from '@/constants/siteMap'
 
 const mountComponent = () =>
   mount(HeaderNavigation, {
@@ -19,7 +19,7 @@ describe('HeaderNavigation', () => {
   it('should display links for all siteMap', () => {
     const wrapper = mountComponent()
 
-    const siteMapList = Object.values(siteMap)
+    const siteMapList = Object.values(SITE_MAP)
     const links = wrapper.findAllComponents(RouterLinkStub)
     const buttons = wrapper.findAll('li')
 

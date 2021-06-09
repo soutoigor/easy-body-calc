@@ -1,22 +1,25 @@
 /* eslint-disable dot-notation */
 import { mount } from '@vue/test-utils'
 import InputSelect from '@/components/common/InputSelect.vue'
-import { BiologicalSex } from './../../body-fat/interface'
+import { TBiologicalSex } from '@/types/biologicalSex'
+import { BIOLOGICAL_SEX } from '@/constants/biologicalSex'
+
+const { MALE, FEMALE } = BIOLOGICAL_SEX
 
 const items = [
   {
     label: 'Male',
-    value: 'M',
+    value: MALE,
   },
   {
     label: 'Female',
-    value: 'F',
+    value: FEMALE,
   },
 ]
 
 const label = 'Biological sex'
 
-const mountComponent = (value: BiologicalSex | null) =>
+const mountComponent = (value: TBiologicalSex | null) =>
   mount(InputSelect, {
     propsData: {
       label,
@@ -27,13 +30,13 @@ const mountComponent = (value: BiologicalSex | null) =>
 
 describe('InputSelect', () => {
   it('should mount the component InputSelect', () => {
-    const wrapper = mountComponent('M')
+    const wrapper = mountComponent(MALE)
 
     expect(wrapper.vm).toBeDefined()
   })
 
   it('should have "active" class only if has value', async () => {
-    const wrapper = mountComponent('M')
+    const wrapper = mountComponent(MALE)
 
     const activeClass = 'field__input--active'
 
@@ -49,7 +52,7 @@ describe('InputSelect', () => {
   })
 
   it('should display label and input default value', () => {
-    const wrapper = mountComponent('M')
+    const wrapper = mountComponent(MALE)
 
     const inputField: HTMLSelectElement = wrapper.find('[data-testid="field"]')
       .element as HTMLSelectElement
@@ -57,7 +60,7 @@ describe('InputSelect', () => {
     const inputValue = inputField.value
 
     expect(wrapper.text()).toContain(label)
-    expect(inputValue).toBe('M')
+    expect(inputValue).toBe(MALE)
   })
 
   it('should emit the selected value', async () => {

@@ -2,7 +2,7 @@ import { mount, RouterLinkStub } from '@vue/test-utils'
 import Home from '@/pages/index.vue'
 import AppLogo from '@/components/common/AppLogo.vue'
 import AppButton from '@/components/common/AppButton.vue'
-import { siteMap } from '@/utils/siteMap'
+import { SITE_MAP } from '@/constants/siteMap'
 
 const mountComponent = () =>
   mount(Home, {
@@ -27,7 +27,7 @@ describe('Home', () => {
   it('should display buttons for all siteMap', () => {
     const wrapper = mountComponent()
 
-    const siteMapList = Object.values(siteMap)
+    const siteMapList = Object.values(SITE_MAP)
     const links = wrapper.findAllComponents(RouterLinkStub)
     const buttons = wrapper.findAllComponents(AppButton)
 

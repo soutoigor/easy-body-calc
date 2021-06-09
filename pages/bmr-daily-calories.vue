@@ -12,9 +12,9 @@
           >
             Calculate again
           </AppButton>
-          <AppButton text @click="goToDailyMacros"
-            >Calculate Daily Macros</AppButton
-          >
+          <AppButton text @click="goToDailyMacros">
+            Calculate Daily Macros
+          </AppButton>
         </div>
         <div v-else class="calc-section__form-container">
           <DailyCaloriesForm @result="setFormResult" />
@@ -58,8 +58,8 @@ import {
   useRouter,
 } from '@nuxtjs/composition-api'
 import frag from 'vue-frag'
-import { siteMap } from '@/utils/siteMap'
-import { Result } from '../components/daily-calories/interface'
+import { SITE_MAP } from '@/constants/siteMap'
+import { IDailyCaloriesResult } from '@/types/dailyCalories'
 
 export default defineComponent({
   name: 'BodyFat',
@@ -73,7 +73,7 @@ export default defineComponent({
   directives: { frag },
   setup() {
     const router = useRouter()
-    const formResult = reactive<Result>({
+    const formResult = reactive<IDailyCaloriesResult>({
       bmr: 0,
       calories: 0,
     })
@@ -84,23 +84,23 @@ export default defineComponent({
         : 'Calculate your Daily Calories bellow:'
     )
 
-    const setFormResult = ({ bmr, calories }: Result) => {
+    const setFormResult = ({ bmr, calories }: IDailyCaloriesResult) => {
       formResult.calories = Math.floor(calories)
       formResult.bmr = Math.floor(bmr)
     }
 
     const goToDailyMacros = () => {
       router.push({
-        path: siteMap.MACROS.url,
-        params: { calories: formResult.calories.toString() },
+        path: SITE_MAP.MACROS.url,
+        query: { calories: formResult.calories.toString() },
       })
     }
 
     return {
       setFormResult,
+      goToDailyMacros,
       formResult,
       formTitle,
-      goToDailyMacros,
     }
   },
 })

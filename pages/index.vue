@@ -31,7 +31,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import AppLogo from '@/components/common/AppLogo.vue'
 import AppButton from '@/components/common/AppButton.vue'
-import { siteMap } from '@/utils/siteMap'
+import { SITE_MAP } from '@/constants/siteMap'
 
 export default defineComponent({
   components: {
@@ -41,7 +41,7 @@ export default defineComponent({
   layout: 'home',
   setup() {
     return {
-      siteMap: Object.values(siteMap),
+      siteMap: Object.values(SITE_MAP),
     }
   },
 })

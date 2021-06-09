@@ -1,4 +1,4 @@
-export interface Bmi {
+export interface IBmi {
   height: number
   weight: number
 }

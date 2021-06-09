@@ -24,21 +24,24 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from '@nuxtjs/composition-api'
-import { Result } from './interface'
+import { IDailyMacrosResult } from '@/types/dailyMacros'
+import { GOALS } from '@/constants/dailyMacros'
+
+const { LOSE, KEEP, GAIN } = GOALS
 
 export default defineComponent({
   props: {
     result: {
-      type: Object as PropType<Result>,
+      type: Object as PropType<IDailyMacrosResult>,
       required: true,
     },
   },
   setup({ result }) {
     const messageByGoal = {
-      lose:
+      [LOSE]:
         'lose weight, at the end of a every week, you have not lose weight, reduce the Carb value in 10% until you reach your goal',
-      keep: 'keep your weight',
-      gain:
+      [KEEP]: 'keep your weight',
+      [GAIN]:
         'gain weight, at the end of a every week, you have not, increase the Carb value in 10% until you reach your goal',
     }
 

@@ -14,12 +14,12 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { Result } from './interface'
+import { IDailyCaloriesResult } from '@/types/dailyCalories'
 
 export default defineComponent({
   props: {
     calcResult: {
-      type: Object as PropType<Result>,
+      type: Object as PropType<IDailyCaloriesResult>,
       required: true,
     },
   },

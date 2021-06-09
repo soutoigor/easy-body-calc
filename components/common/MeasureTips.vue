@@ -25,7 +25,7 @@ import { defineComponent, ref } from '@nuxtjs/composition-api'
 import AppModal from '@/components/common/AppModal.vue'
 import AppButton from '@/components/common/AppButton.vue'
 import AppCollapse from '@/components/common/AppCollapse.vue'
-import { measureTips } from '@/components/common/constants/measureTips'
+import { MEASURE_TIPS } from '@/constants/measureTips'
 
 export default defineComponent({
   name: 'MeasureTips',
@@ -44,7 +44,7 @@ export default defineComponent({
     return {
       tipsModal,
       setTipsModal,
-      measureTips: Object.values(measureTips),
+      measureTips: Object.values(MEASURE_TIPS),
     }
   },
 })

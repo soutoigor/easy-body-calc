@@ -1,18 +1,19 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import Vue from 'vue'
-import BodyFat from '@/pages/body-fat.vue'
+import IBodyFat from '@/pages/body-fat.vue'
 import BodyFatForm from '@/components/body-fat/BodyFatForm.vue'
 import BodyFatResult from '@/components/body-fat/BodyFatResult.vue'
 import BodyFatComparison from '@/components/body-fat/BodyFatComparison.vue'
 import AppExplanation from '@/components/common/AppExplanation.vue'
-import { Result } from './../../components/body-fat/interface'
+import { IBodyFatResult } from '@/types/bodyFat'
+import { BIOLOGICAL_SEX } from '@/constants/biologicalSex'
 
 const WrapperComponent = Vue.component('WrapperComponent', {
   template: '<div><slot /></div>',
 })
 
-const result: Result = {
-  biologicalSex: 'M',
+const result: IBodyFatResult = {
+  biologicalSex: BIOLOGICAL_SEX.MALE,
   result: 28,
 }
 
@@ -22,11 +23,11 @@ const mountComponent = () =>
       NuxtLink: RouterLinkStub,
     },
     slots: {
-      default: BodyFat,
+      default: IBodyFat,
     },
   })
 
-describe('BodyFat', () => {
+describe('IBodyFat', () => {
   it('should mount the component', () => {
     const wrapper = mountComponent()
 

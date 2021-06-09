@@ -14,7 +14,7 @@
     <InputSelect
       v-model="form.biologicalSex"
       label="Biological sex"
-      :items="biologicalSexItems"
+      :items="BIOLOGICAL_SEX_ITEMS"
     />
     <InputSelect
       v-model="form.activity"
@@ -29,42 +29,42 @@
 
 <script lang="ts">
 import InputNumber from '@/components/common/InputNumber.vue'
-import InputSelect, { Items } from '@/components/common/InputSelect.vue'
+import InputSelect from '@/components/common/InputSelect.vue'
 import AppButton from '@/components/common/AppButton.vue'
 import { computed, defineComponent, reactive } from '@nuxtjs/composition-api'
-import { DailyCalories, Bmr } from './interface'
+import {
+  IDailyCalories,
+  IBmr,
+  IDailyCaloriesResult,
+} from '@/types/dailyCalories'
+import { BIOLOGICAL_SEX, BIOLOGICAL_SEX_ITEMS } from '@/constants/biologicalSex'
+import { TSelectItems } from '@/types/selectOption'
+import { ACTIVITY } from '@/constants/dailyCalories'
 
-const biologicalSexItems: Items = [
-  {
-    label: 'Male',
-    value: 'M',
-  },
-  {
-    label: 'Female',
-    value: 'F',
-  },
-]
+const { SEDENTARY, SLIGHTLY, MODERATELY, ACTIVE, VERY } = ACTIVITY
 
-const activityLevelItems: Items = [
+const { MALE, FEMALE } = BIOLOGICAL_SEX
+
+const activityLevelItems: TSelectItems = [
   {
     label: 'Sedentary',
-    value: 1.2,
+    value: SEDENTARY,
   },
   {
     label: 'Slightly active',
-    value: 1.375,
+    value: SLIGHTLY,
   },
   {
     label: 'Moderately active',
-    value: 1.55,
+    value: MODERATELY,
   },
   {
     label: 'Active',
-    value: 1.725,
+    value: ACTIVE,
   },
   {
     label: 'Very active',
-    value: 1.9,
+    value: VERY,
   },
 ]
 
@@ -76,11 +76,11 @@ export default defineComponent({
   },
   emits: ['result'],
   setup(_, { emit }) {
-    const form = reactive<DailyCalories>({
+    const form = reactive<IDailyCalories>({
       height: 0,
       weight: 0,
       age: 0,
-      biologicalSex: 'M',
+      biologicalSex: MALE,
       activity: 0,
     })
 
@@ -88,15 +88,17 @@ export default defineComponent({
       Object.values(form).some((value) => !value)
     )
 
-    const isFemale = () => form.biologicalSex === 'F'
+    const isFemale = () => form.biologicalSex === FEMALE
 
-    const getMenBmr = ({ height, weight, age }: Bmr) =>
+    const getMenBmr = ({ height, weight, age }: IBmr) =>
       88.362 + 13.397 * weight + 4.799 * height - 5.677 * age
 
-    const getWomenBmr = ({ weight, height, age }: Bmr) =>
+    const getWomenBmr = ({ weight, height, age }: IBmr) =>
       447.593 + 9.247 * weight + 3.098 * height - 4.33 * age
 
-    const calculateDailyCalories = (form: DailyCalories) => {
+    const calculateDailyCalories = (
+      form: IDailyCalories
+    ): IDailyCaloriesResult => {
       const bmr = isFemale() ? getWomenBmr(form) : getMenBmr(form)
       const calories = bmr * form.activity
 
@@ -115,7 +117,7 @@ export default defineComponent({
       disabled,
       isFemale,
       activityLevelItems,
-      biologicalSexItems,
+      BIOLOGICAL_SEX_ITEMS,
     }
   },
 })

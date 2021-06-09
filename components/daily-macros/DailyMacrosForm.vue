@@ -21,9 +21,9 @@
 
 <script lang="ts">
 import InputNumber from '@/components/common/InputNumber.vue'
-import InputSelect, { Items } from '@/components/common/InputSelect.vue'
+import InputSelect from '@/components/common/InputSelect.vue'
 import AppButton from '@/components/common/AppButton.vue'
-import { siteMap } from '@/utils/siteMap'
+import { SITE_MAP } from '@/constants/siteMap'
 import {
   computed,
   defineComponent,
@@ -31,7 +31,11 @@ import {
   onMounted,
   useRoute,
 } from '@nuxtjs/composition-api'
-import { DailyMacros, Result, Goal } from './interface'
+import { IDailyMacros, IDailyMacrosResult, TGoal } from '@/types/dailyMacros'
+import { TSelectItems } from '@/types/selectOption'
+import { GOALS } from '@/constants/dailyMacros'
+
+const { LOSE, KEEP, GAIN } = GOALS
 
 export default defineComponent({
   components: {
@@ -43,25 +47,25 @@ export default defineComponent({
   setup(_, { emit }) {
     const route = useRoute()
 
-    const goalItems: Items = [
+    const goalItems: TSelectItems = [
       {
         label: 'Lose weight',
-        value: 'lose',
+        value: LOSE,
       },
       {
         label: 'Keep weight',
-        value: 'keep',
+        value: KEEP,
       },
       {
         label: 'Gain weight',
-        value: 'gain',
+        value: GAIN,
       },
     ]
 
-    const form = reactive<DailyMacros>({
+    const form = reactive<IDailyMacros>({
       calories: 0,
       weight: 0,
-      goal: 'lose',
+      goal: LOSE,
     })
 
     const disabled = computed<boolean>(() =>
@@ -75,17 +79,17 @@ export default defineComponent({
       }
     })
 
-    const getNewCalories = (goal: Goal, calories: number) => {
+    const getNewCalories = (goal: TGoal, calories: number) => {
       const caloriesByGoal = {
-        lose: calories - (calories * 10) / 100,
-        keep: calories,
-        gain: calories + (calories * 10) / 100,
+        [LOSE]: calories - (calories * 10) / 100,
+        [KEEP]: calories,
+        [GAIN]: calories + (calories * 10) / 100,
       }
 
       return caloriesByGoal[goal]
     }
 
-    const calculateDailyMacros = (form: DailyMacros): Result => {
+    const calculateDailyMacros = (form: IDailyMacros): IDailyMacrosResult => {
       const newCalories = getNewCalories(form.goal, form.calories)
 
       const protein = Math.floor(form.weight * 2.4)
@@ -113,7 +117,7 @@ export default defineComponent({
       form,
       disabled,
       goalItems,
-      dailyCaloriesLink: siteMap.CALORIES.url,
+      dailyCaloriesLink: SITE_MAP.CALORIES.url,
     }
   },
 })
