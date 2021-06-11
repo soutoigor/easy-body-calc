@@ -8,7 +8,7 @@
       :class="{ 'field__input--active': !!value }"
       autocomplete="off"
       v-bind="$attrs"
-      :value="value"
+      :value="value || ''"
       @keydown.space.prevent
       @keypress="isNumber"
       @input="updateValue"
