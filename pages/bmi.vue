@@ -57,7 +57,7 @@ import { defineComponent, ref, computed } from '@nuxtjs/composition-api'
 import frag from 'vue-frag'
 
 export default defineComponent({
-  name: 'IBmi',
+  name: 'Bmi',
   components: {
     BmiForm,
     AppExplanation,

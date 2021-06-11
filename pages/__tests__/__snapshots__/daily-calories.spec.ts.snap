@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DailyCalories should mount the component 1`] = `
+"<div>
+  <section class=\\"calc-section\\">
+    <h2 class=\\"calc-section__title\\">Calculate your Daily Calories bellow:</h2>
+    <transition-stub name=\\"rotate\\">
+      <div class=\\"calc-section__form-container\\">
+        <form class=\\"bodyfat-form\\">
+          <div data-testid=\\"height\\"><label for=\\"input\\" class=\\"field__label\\">Height (cm)</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" data-testid=\\"height\\" class=\\"field__input\\"></div>
+          <div data-testid=\\"weight\\"><label for=\\"input\\" class=\\"field__label\\">Weight (kg)</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" data-testid=\\"weight\\" class=\\"field__input\\"></div>
+          <div data-testid=\\"age\\"><label for=\\"input\\" class=\\"field__label\\">Age</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" data-testid=\\"age\\" class=\\"field__input\\"></div>
+          <div><label for=\\"select\\" class=\\"field__label\\">Biological sex</label> <select id=\\"select\\" data-testid=\\"field\\" class=\\"field__input field__input--active\\">
+              <option value=\\"M\\">
+                Male
+              </option>
+              <option value=\\"F\\">
+                Female
+              </option>
+            </select></div>
+          <div><label for=\\"select\\" class=\\"field__label\\">Exercise level</label> <select id=\\"select\\" data-testid=\\"field\\" class=\\"field__input\\">
+              <option value=\\"1.2\\">
+                Sedentary
+              </option>
+              <option value=\\"1.375\\">
+                Slightly active
+              </option>
+              <option value=\\"1.55\\">
+                Moderately active
+              </option>
+              <option value=\\"1.725\\">
+                Active
+              </option>
+              <option value=\\"1.9\\">
+                Very active
+              </option>
+            </select></div> <button type=\\"submit\\" disabled=\\"disabled\\" class=\\"button primary\\" data-testid=\\"submit\\">
+            Calculate
+          </button>
+        </form>
+        <div><button type=\\"button\\" class=\\"button primary text\\" data-testid=\\"open-modal\\">
+            How to get the measures
+          </button>
+          <transition-stub name=\\"modal\\" style=\\"display: none;\\">
+            <div data-testid=\\"backdrop\\" class=\\"modal__backdrop\\">
+              <article role=\\"dialog\\" aria-labelledby=\\"modalTitle\\" aria-describedby=\\"modalDescription\\" class=\\"modal__container\\">
+                <header class=\\"modal__header\\">
+                  <h1 class=\\"modal__title\\">How to get the measures</h1> <button data-testid=\\"closeButton\\" class=\\"modal__close\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 20 20\\" fill=\\"currentColor\\" class=\\"modal__close-icon\\">
+                      <path fill-rule=\\"evenodd\\" d=\\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\\" clip-rule=\\"evenodd\\"></path>
+                    </svg></button>
+                </header>
+                <main class=\\"modal__content\\">
+                  <div data-testid=\\"collapse\\">
+                    <section class=\\"collapse\\">
+                      <header class=\\"collapse__header\\">
+                        <h1>Height</h1> <svg xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" class=\\"collapse__icon\\">
+                          <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M19 9l-7 7-7-7\\"></path>
+                        </svg>
+                      </header>
+                      <transition-stub name=\\"expand\\">
+                        <!---->
+                      </transition-stub>
+                    </section>
+                    <section class=\\"collapse\\">
+                      <header class=\\"collapse__header\\">
+                        <h1>Weight</h1> <svg xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" class=\\"collapse__icon\\">
+                          <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M19 9l-7 7-7-7\\"></path>
+                        </svg>
+                      </header>
+                      <transition-stub name=\\"expand\\">
+                        <!---->
+                      </transition-stub>
+                    </section>
+                    <section class=\\"collapse\\">
+                      <header class=\\"collapse__header\\">
+                        <h1>Hip</h1> <svg xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" class=\\"collapse__icon\\">
+                          <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M19 9l-7 7-7-7\\"></path>
+                        </svg>
+                      </header>
+                      <transition-stub name=\\"expand\\">
+                        <!---->
+                      </transition-stub>
+                    </section>
+                    <section class=\\"collapse\\">
+                      <header class=\\"collapse__header\\">
+                        <h1>Neck</h1> <svg xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" class=\\"collapse__icon\\">
+                          <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M19 9l-7 7-7-7\\"></path>
+                        </svg>
+                      </header>
+                      <transition-stub name=\\"expand\\">
+                        <!---->
+                      </transition-stub>
+                    </section>
+                    <section class=\\"collapse\\">
+                      <header class=\\"collapse__header\\">
+                        <h1>Abdomen</h1> <svg xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" class=\\"collapse__icon\\">
+                          <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M19 9l-7 7-7-7\\"></path>
+                        </svg>
+                      </header>
+                      <transition-stub name=\\"expand\\">
+                        <!---->
+                      </transition-stub>
+                    </section>
+                    <section class=\\"collapse\\">
+                      <header class=\\"collapse__header\\">
+                        <h1>Daily activities</h1> <svg xmlns=\\"http://www.w3.org/2000/svg\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\" class=\\"collapse__icon\\">
+                          <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M19 9l-7 7-7-7\\"></path>
+                        </svg>
+                      </header>
+                      <transition-stub name=\\"expand\\">
+                        <!---->
+                      </transition-stub>
+                    </section>
+                  </div>
+                </main>
+              </article>
+            </div>
+          </transition-stub>
+        </div>
+      </div>
+    </transition-stub>
+  </section>
+  <aside class=\\"explanation-section\\">
+    <article>
+      <h1 class=\\"explanation-title\\">DAILY CALORIES</h1>
+      <div class=\\"explanation-content\\">
+        <p>
+          Your <strong>daily calories</strong> is the sum of your
+          <strong> basal metabolic rate</strong> (BMR) is the calories that
+          your body needs to perform the body's most basic functions, like
+          breathing, your brainc, etc, and the <strong>daily calories</strong>
+          that your body use in your daily activities.
+        </p>
+        <p>
+          This value represents the amount of calories that your body consumes
+          during all the day. So, if you consume <b>more</b> calories than
+          this result, you will gain <b>weight</b>, and consuming less, you
+          will <strong>lose weight</strong>.
+        </p>
+      </div>
+    </article>
+  </aside>
+</div>"
+`;

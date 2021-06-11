@@ -3,7 +3,6 @@
     <header
       class="collapse__header"
       :class="{ 'collapse__header--active': active }"
-      data-testid="header"
       @click="active = !active"
     >
       <h1>{{ title }}</h1>
@@ -24,7 +23,7 @@
       </svg>
     </header>
     <transition name="expand">
-      <main v-if="active" data-testid="content" class="collapse__content">
+      <main v-if="active" class="collapse__content">
         <slot />
       </main>
     </transition>

@@ -1,4 +1,6 @@
-export const ACTIVITY = {
+import { IActivities } from '@/types/dailyCalories'
+
+export const ACTIVITY: IActivities = {
   SEDENTARY: 1.2,
   SLIGHTLY: 1.375,
   MODERATELY: 1.55,

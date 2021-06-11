@@ -68,7 +68,7 @@ import frag from 'vue-frag'
 import { IBodyFatResult } from '@/types/bodyFat'
 
 export default defineComponent({
-  name: 'IBodyFat',
+  name: 'BodyFat',
   components: {
     BodyFatForm,
     AppExplanation,

@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import Vue from 'vue'
-import IBmi from '@/pages/bmi.vue'
+import Bmi from '@/pages/bmi.vue'
 import BmiForm from '@/components/bmi/BmiForm.vue'
 import BmiResult from '@/components/bmi/BmiResult.vue'
 import BmiComparison from '@/components/bmi/BmiComparison.vue'
@@ -16,7 +16,7 @@ const mountComponent = () =>
       NuxtLink: RouterLinkStub,
     },
     slots: {
-      default: IBmi,
+      default: Bmi,
     },
   })
 
