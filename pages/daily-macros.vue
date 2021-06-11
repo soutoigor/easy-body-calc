@@ -53,7 +53,7 @@
           <p>And you can eat anything you want, if it fits your macros.</p>
         </template>
       </AppExplanation>
-      <AppButton text @click="setMacrosModal(true)">
+      <AppButton data-testid="open-macros" text @click="setMacrosModal(true)">
         Know more about each macro
       </AppButton>
       <AppModal v-show="macrosModal" @close="setMacrosModal(false)">

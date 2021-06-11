@@ -4,7 +4,7 @@
     <span class="result__value">
       {{ calcResult.calories }}
     </span>
-    <hr class="border-white border-opacity-50 w-3/5" />
+    <hr class="result__divider" />
     <span class="result__text">BMR:</span>
     <span class="result__value">
       {{ calcResult.bmr }}
@@ -34,6 +34,10 @@ export default defineComponent({
 
 .result__value {
   @apply text-6xl italic font-black text-turbo;
+}
+
+.result__divider {
+  @apply border-white border-opacity-50 w-3/5;
 }
 
 .result__text {

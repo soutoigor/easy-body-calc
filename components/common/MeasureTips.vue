@@ -1,20 +1,27 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <div>
-    <AppButton text color="primary" @click="setTipsModal(true)">
+    <AppButton
+      data-testid="open-modal"
+      text
+      color="primary"
+      @click="setTipsModal(true)"
+    >
       How to get the measures
     </AppButton>
     <AppModal v-show="tipsModal" @close="setTipsModal(false)">
       <template #title>How to get the measures</template>
       <template #content>
-        <AppCollapse
-          v-for="{ TITLE, IMAGE, DESCRIPTION } of measureTips"
-          :key="TITLE"
-          :title="TITLE"
-        >
-          <img class="mx-auto mb-3 max-w-sm" :src="IMAGE" :alt="TITLE" />
-          <p v-html="DESCRIPTION" />
-        </AppCollapse>
+        <div data-testid="collapse">
+          <AppCollapse
+            v-for="{ TITLE, IMAGE, DESCRIPTION } of measureTips"
+            :key="TITLE"
+            :title="TITLE"
+          >
+            <img class="mx-auto mb-3 max-w-sm" :src="IMAGE" :alt="TITLE" />
+            <p v-html="DESCRIPTION" />
+          </AppCollapse>
+        </div>
       </template>
     </AppModal>
   </div>

@@ -13,8 +13,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useRoute } from '@nuxtjs/composition-api'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { SITE_MAP } from '@/constants/siteMap'
+import { useRoute } from '@/router'
 
 export default defineComponent({
   name: 'HeaderNavigation',

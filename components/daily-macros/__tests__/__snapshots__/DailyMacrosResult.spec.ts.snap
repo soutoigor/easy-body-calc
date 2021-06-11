@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DailyMacrosResult should match right advice message for goal "GAIN" 1`] = `"200 Carbs 65 Fat 130 Protein 2200 Calories Reach the macros above everyday to gain weight, at the end of a every week, you have not, increase the Carb value in 10% until you reach your goal."`;
+
+exports[`DailyMacrosResult should match right advice message for goal "KEEP" 1`] = `"200 Carbs 65 Fat 130 Protein 2200 Calories Reach the macros above everyday to keep your weight."`;
+
+exports[`DailyMacrosResult should match right advice message for goal "LOSE" 1`] = `"200 Carbs 65 Fat 130 Protein 2200 Calories Reach the macros above everyday to lose weight, at the end of a every week, you have not lose weight, reduce the Carb value in 10% until you reach your goal."`;

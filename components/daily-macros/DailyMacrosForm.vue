@@ -29,15 +29,16 @@ import {
   defineComponent,
   reactive,
   onMounted,
-  useRoute,
 } from '@nuxtjs/composition-api'
 import { IDailyMacros, IDailyMacrosResult, TGoal } from '@/types/dailyMacros'
 import { TSelectItems } from '@/types/selectOption'
 import { GOALS } from '@/constants/dailyMacros'
+import { useRoute } from '@/router'
 
 const { LOSE, KEEP, GAIN } = GOALS
 
 export default defineComponent({
+  name: 'DailyMacrosForm',
   components: {
     InputNumber,
     AppButton,
