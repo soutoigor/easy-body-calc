@@ -3,7 +3,11 @@
     <section class="calc-section">
       <h2 class="calc-section__title">{{ formTitle }}</h2>
       <transition name="rotate">
-        <div v-if="formResult.calories" class="calc-section__result">
+        <div
+          v-if="formResult.calories"
+          key="result"
+          class="calc-section__result"
+        >
           <DailyCaloriesResult :calc-result="formResult" />
           <AppButton
             data-testid="calculate-again"
@@ -16,7 +20,7 @@
             <AppButton text>Calculate Daily Macros</AppButton>
           </NuxtLink>
         </div>
-        <div v-else class="calc-section__form-container">
+        <div v-else key="form" class="calc-section__form-container">
           <DailyCaloriesForm @result="setFormResult" />
           <MeasureTips />
         </div>

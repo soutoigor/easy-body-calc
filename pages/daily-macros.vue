@@ -3,7 +3,7 @@
     <section class="calc-section">
       <h2 class="calc-section__title">{{ formTitle }}</h2>
       <transition name="rotate">
-        <div v-if="result" class="calc-section__result">
+        <div v-if="result" key="result" class="calc-section__result">
           <DailyMacrosResult :result="result" />
           <AppButton
             data-testid="calculate-again"
@@ -13,7 +13,7 @@
             Calculate again
           </AppButton>
         </div>
-        <div v-else class="calc-section__form-container">
+        <div v-else key="form" class="calc-section__form-container">
           <DailyMacrosForm @result="setResult" />
           <MeasureTips />
         </div>
