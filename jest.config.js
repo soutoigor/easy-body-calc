@@ -18,4 +18,5 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
     '<rootDir>/layouts/**/*.vue',
   ],
+  coverageReporters: ['json-summary', 'text', 'lcov'],
 }

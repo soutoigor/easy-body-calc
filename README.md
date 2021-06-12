@@ -1,3 +1,8 @@
+![statements coverage](./coverage/badge-statements.svg)
+![lines coverage](./coverage/badge-lines.svg)
+![functions coverage](./coverage/badge-functions.svg)
+![branches coverage](./coverage/badge-branches.svg)  
+
 ![easy body calc logo](https://i.ibb.co/rd9By4s/easy.png)
 # Easy Body Calc
 With the Easy Body Calc, you can track your main body measures, so you can reach your  health and aesthetic goals. 🏋️
