@@ -46,7 +46,7 @@
             <strong>obese</strong>.
           </p>
           <p>
-            Remeber, a very low or very high percentage of Body Fat for much
+            Remember, a very low or very high percentage of Body Fat for much
             time is not <strong>healthy</strong>. Keep always the
             <strong>balance</strong>.
           </p>

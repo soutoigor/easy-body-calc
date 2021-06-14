@@ -36,9 +36,9 @@
             health.
           </p>
           <p>
-            Being in the right BMI is important because being under or over
-            weight, influence on health, increasing the risc of diseases such as
-            strokes and heart attacks, when you are overweight.
+            Being in the right BMI is important because being under or
+            overweight, can increase the risk of diseases such as strokes and
+            heart attacks.
           </p>
         </template>
       </AppExplanation>

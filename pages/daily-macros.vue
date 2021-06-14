@@ -37,11 +37,11 @@
           </p>
           <p>
             But our body is smart, when you change your daily calorie intake, it
-            adapts to survive with that new total of calories, and stop gaining
-            or losing weight, so you need to adapt your macros. Generally, we
-            change the Carbohydrate in 10%, up if gaining weight, down if
-            losing. you can change the Fat too, if you already changed the
-            Carbohydrate too much. If the carbohydrate is too low, add more
+            adapts to survive with that new total of calories, and you stop
+            gaining or losing weight, so you need to adapt your macros.
+            Generally, we change the Carbohydrate in 10%, up if gaining weight,
+            down if losing. you can change the Fat too, if you already changed
+            the Carbohydrate too much. If the carbohydrate is too low, add more
             cardio exercises.
           </p>
           <p>
@@ -50,7 +50,7 @@
             add or remove calories in a healthy way, and you will no longer
             evolve.
           </p>
-          <p>And you can eat anything you want, if it fits your macros.</p>
+          <p>You can eat anything you want, if it fits your macros.</p>
         </template>
       </AppExplanation>
       <AppButton data-testid="open-macros" text @click="setMacrosModal(true)">
@@ -69,13 +69,13 @@
             from slow absorption before a long period without eating. But that's
             not will cause big differences, worry more about the biological
             value of this protein, proteins from animal sources such as eggs and
-            meat have a better biological value than q from whole sources. the
+            meat have a better biological value than from vegetable sources. the
             better the biological value, the better your muscles will absorb.
           </p>
           <h3 class="macros__title">Fat</h3>
           <p>
-            Each gram of fat has 9 calories. The function of fat is provide
-            energy for the body, synthesize hormones, are the vehicle for
+            Each gram of fat has 9 calories. The function of the fat is provide
+            energy for the body, synthesize hormones, be the vehicle for
             fat-soluble vitamins, compose cellular structures and increase the
             palatability of foods. Your fonts can be both animal and vegetable.
             The main sources of fat are: cheeses, meat, milk, olives,
@@ -87,13 +87,14 @@
             energy and glycogen for muscles, brain, bone marrow and various
             functions of the nervous system. Depending on the source of
             carbohydrate, this changes your glycemic index, which is the speed
-            that it is processed and peak amount of insulin it produces.
+            that it is processed and the amount of insulin it produces.
             Carbohydrate when it is quickly processed and is not used as a
-            source of energy, it converts into adipose tissue (its fats), by
-            this, avoid foods with a high glycemic index such as: sweets, soft
-            drinks, food made with flour such as Paes and pasta. use wisely, put
-            this type of food for a post workout, or upon waking up, which is
-            when your body really needs to use itself.
+            source of energy, it's converted into adipose tissue (fat), avoid
+            foods with a high glycemic index such as: sweets, soft drinks, food
+            made with flour such as bread and pasta. use it wisely, put this
+            type of food for a post workout, or upon waking up, which is when
+            your body really needs insulin fast, in other moments, try to ingest
+            carbohydrates of slow absorption.
           </p>
         </template>
       </AppModal>

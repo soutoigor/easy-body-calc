@@ -32,9 +32,8 @@
         <template #content>
           <p>
             Your <strong>daily calories</strong> is the sum of your
-            <strong> basal metabolic rate</strong> (BMR) is the calories that
-            your body needs to perform the body's most basic functions, like
-            breathing, your brainc, etc, and the <strong>daily calories</strong>
+            <strong> basal metabolic rate</strong> (BMR) and the
+            <strong>calories</strong>
             that your body use in your daily activities.
           </p>
           <p>
@@ -42,6 +41,11 @@
             during all the day. So, if you consume <b>more</b> calories than
             this result, you will gain <b>weight</b>, and consuming less, you
             will <strong>lose weight</strong>.
+          </p>
+          <p>
+            The <strong>BMR</strong> is the total of calories that your body
+            needs to perform the body's most basic functions, like breathing,
+            your brain, etc.
           </p>
         </template>
       </AppExplanation>
