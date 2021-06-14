@@ -2,6 +2,7 @@
 ![lines coverage](./coverage/badge-lines.svg)
 ![functions coverage](./coverage/badge-functions.svg)
 ![branches coverage](./coverage/badge-branches.svg)  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/757fdd75-ca52-4926-a191-13cc52b458d3/deploy-status)](https://app.netlify.com/sites/easy-body-calc/deploys)  
 
 ![easy body calc logo](https://i.ibb.co/rd9By4s/easy.png)
 # Easy Body Calc
