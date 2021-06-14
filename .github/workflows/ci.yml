@@ -45,3 +45,9 @@ jobs:
 
       - name: Run tests 🧪
         run: npm run test
+
+      - name: Run coverage %
+        run: npm run test:coverage
+
+      - name: Set badges
+        run:  npx jest-coverage-badges
