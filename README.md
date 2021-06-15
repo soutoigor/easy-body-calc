@@ -13,6 +13,18 @@ You can your track: BMI, Body Fat, Daily Calories (BMR), and Daily Macros.
 _**“What gets measure gets managed.”**_
 
 Start using here: [easy-body-calc.netlify.app](https://easy-body-calc.netlify.app)
+
+## Examples
+
+> Desktop  
+ 
+https://user-images.githubusercontent.com/22479477/121974189-43e61b00-cd55-11eb-85eb-17c9f5c19e19.mp4
+
+> Mobile  
+
+https://user-images.githubusercontent.com/22479477/121974212-4ea0b000-cd55-11eb-879b-4edd0f187c08.mp4
+
+
 ## Build Setup
 
 Install dependencies with:
