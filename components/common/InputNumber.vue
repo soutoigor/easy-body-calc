@@ -3,14 +3,15 @@
     <label class="field__label" for="input">{{ label }}</label>
     <input
       id="input"
-      type="text"
       class="field__input"
       :class="{ 'field__input--active': !!value }"
       autocomplete="off"
       v-bind="$attrs"
       :value="value || ''"
+      type="number"
+      pattern="^\d*(\.\d{0,2})?$"
+      step=".01"
       @keydown.space.prevent
-      @keypress="isNumber"
       @input="updateValue"
     />
   </div>
@@ -35,24 +36,11 @@ export default defineComponent({
   },
   emits: ['input'],
   setup(_, { emit }) {
-    const stringToNumber = (fieldValue: string) =>
-      Number(fieldValue.replace(/\D/g, ''))
-
-    const isNumber = (event: KeyboardEvent) => {
-      if (Number(event.key) >= 0) return
-      event.preventDefault()
-    }
-
     const updateValue = (event: InputEvent) => {
-      const formattedField = stringToNumber(
-        (event.target as HTMLInputElement).value
-      )
-
-      emit('input', formattedField)
+      emit('input', Number((event.target as HTMLInputElement).value))
     }
 
     return {
-      isNumber,
       updateValue,
     }
   },

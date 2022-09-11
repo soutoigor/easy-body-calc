@@ -7,9 +7,9 @@ exports[`DailyCalories should mount the component 1`] = `
     <transition-stub name=\\"rotate\\">
       <div class=\\"calc-section__form-container\\">
         <form class=\\"bodyfat-form\\">
-          <div data-testid=\\"height\\"><label for=\\"input\\" class=\\"field__label\\">Height (cm)</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" data-testid=\\"height\\" class=\\"field__input\\"></div>
-          <div data-testid=\\"weight\\"><label for=\\"input\\" class=\\"field__label\\">Weight (kg)</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" data-testid=\\"weight\\" class=\\"field__input\\"></div>
-          <div data-testid=\\"age\\"><label for=\\"input\\" class=\\"field__label\\">Age</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" data-testid=\\"age\\" class=\\"field__input\\"></div>
+          <div data-testid=\\"height\\"><label for=\\"input\\" class=\\"field__label\\">Height (cm)</label> <input id=\\"input\\" autocomplete=\\"off\\" type=\\"number\\" pattern=\\"^\\\\d*(\\\\.\\\\d{0,2})?$\\" step=\\".01\\" data-testid=\\"height\\" class=\\"field__input\\"></div>
+          <div data-testid=\\"weight\\"><label for=\\"input\\" class=\\"field__label\\">Weight (kg)</label> <input id=\\"input\\" autocomplete=\\"off\\" type=\\"number\\" pattern=\\"^\\\\d*(\\\\.\\\\d{0,2})?$\\" step=\\".01\\" data-testid=\\"weight\\" class=\\"field__input\\"></div>
+          <div data-testid=\\"age\\"><label for=\\"input\\" class=\\"field__label\\">Age</label> <input id=\\"input\\" autocomplete=\\"off\\" type=\\"number\\" pattern=\\"^\\\\d*(\\\\.\\\\d{0,2})?$\\" step=\\".01\\" data-testid=\\"age\\" class=\\"field__input\\"></div>
           <div><label for=\\"select\\" class=\\"field__label\\">Biological sex</label> <select id=\\"select\\" data-testid=\\"field\\" class=\\"field__input field__input--active\\">
               <option value=\\"M\\">
                 Male
