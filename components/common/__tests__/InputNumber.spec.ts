@@ -55,23 +55,4 @@ describe('InputNumber', () => {
     expect(wrapper.emitted('input')).toBeTruthy()
     expect(wrapper.emitted('input')![0]).toEqual([value])
   })
-
-  it('should not insert and emit character if is not number', async () => {
-    const wrapper = mount(InputNumber)
-
-    await wrapper.find('input').trigger('keydown.space')
-
-    await wrapper.find('input').trigger('keypress', {
-      key: 'G',
-    })
-
-    await wrapper.find('input').trigger('keypress', {
-      key: '3',
-    })
-
-    await wrapper.find('input').setValue('AA1A G5j8')
-
-    expect(wrapper.emitted('input')).toBeTruthy()
-    expect(wrapper.emitted('input')![0]).toEqual([158])
-  })
 })

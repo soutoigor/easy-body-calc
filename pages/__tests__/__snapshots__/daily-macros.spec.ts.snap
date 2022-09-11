@@ -7,12 +7,12 @@ exports[`DailyMacros should mount the component 1`] = `
     <transition-stub name=\\"rotate\\">
       <div class=\\"calc-section__form-container\\">
         <form class=\\"bodyfat-form\\">
-          <div><label for=\\"input\\" class=\\"field__label\\">Daily calories</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" class=\\"field__input\\"></div> <span>
+          <div><label for=\\"input\\" class=\\"field__label\\">Daily calories</label> <input id=\\"input\\" autocomplete=\\"off\\" type=\\"number\\" pattern=\\"^\\\\d*(\\\\.\\\\d{0,2})?$\\" step=\\".01\\" class=\\"field__input\\"></div> <span>
     Don't know your <b>Daily Calories</b>?
     <a class=\\"calories-link\\">
       Calculate here
     </a></span>
-          <div><label for=\\"input\\" class=\\"field__label\\">Weight (kg)</label> <input id=\\"input\\" type=\\"text\\" autocomplete=\\"off\\" class=\\"field__input\\"></div>
+          <div><label for=\\"input\\" class=\\"field__label\\">Weight (kg)</label> <input id=\\"input\\" autocomplete=\\"off\\" type=\\"number\\" pattern=\\"^\\\\d*(\\\\.\\\\d{0,2})?$\\" step=\\".01\\" class=\\"field__input\\"></div>
           <div><label for=\\"select\\" class=\\"field__label\\">Select your goal</label> <select id=\\"select\\" data-testid=\\"field\\" class=\\"field__input field__input--active\\">
               <option value=\\"lose\\">
                 Lose weight
