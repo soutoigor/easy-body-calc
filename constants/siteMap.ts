@@ -15,4 +15,8 @@ export const SITE_MAP = {
     label: 'Daily calories',
     url: '/bmr-daily-calories',
   },
+  GENETIC_POTENTIAL: {
+    label: 'Genetic potential',
+    url: '/genetic-potential',
+  },
 }
