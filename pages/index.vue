@@ -12,13 +12,11 @@
     </div>
     <div class="home__nav-container">
       <nav class="home__nav">
-        <template v-for="page of siteMap">
-          <NuxtLink :key="page.url" :to="page.url">
-            <AppButton color="secondary" class="home__nav-button">
-              {{ page.label }}
-            </AppButton>
-          </NuxtLink>
-        </template>
+        <NuxtLink v-for="page of siteMap" :key="page.url" :to="page.url">
+          <AppButton color="secondary" class="home__nav-button">
+            {{ page.label }}
+          </AppButton>
+        </NuxtLink>
       </nav>
       <h3 class="home__measure-phrase">
         “What gets <strong>measure</strong> gets <strong>managed</strong>.”
@@ -50,7 +48,7 @@ export default defineComponent({
 <style scoped>
 .home {
   @apply flex px-6 flex-col lg:flex-row items-center justify-around;
-  @apply lg:justify-around bg-home-mobile sm:bg-home-desktop min-h-screen;
+  @apply lg:justify-around bg-home-mobile bg-no-repeat bg-cover sm:bg-home-desktop min-h-screen;
 }
 
 .home__presentation-phrase {
