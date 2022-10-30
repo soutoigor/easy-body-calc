@@ -2,6 +2,17 @@
 import { mount } from '@vue/test-utils'
 import GeneticPotentialForm from '@/components/genetic-potential/GeneticPotentialForm.vue'
 import InputNumber from '@/components/common/InputNumber.vue'
+import { IGeneticPotentialResult } from '@/types/geneticPotential'
+
+const result: IGeneticPotentialResult = {
+  calf: 40.36,
+  chest: 109.39,
+  foreArm: 30.7,
+  neck: 38.37,
+  thigh: 61.25,
+  upperArm: 38.89,
+  weight: 0,
+}
 
 describe('GeneticPotentialForm', () => {
   it('should mount the component GeneticPotentialForm', () => {
@@ -34,16 +45,6 @@ describe('GeneticPotentialForm', () => {
 
     await wrapper.find('form').trigger('submit')
 
-    expect(wrapper.emitted('result')![0]).toStrictEqual([
-      {
-        calf: 40.36,
-        chest: 109.39,
-        foreArm: 30.7,
-        neck: 38.37,
-        thigh: 61.25,
-        upperArm: 38.89,
-        weight: 0,
-      },
-    ])
+    expect(wrapper.emitted('result')![0]).toStrictEqual([result])
   })
 })
