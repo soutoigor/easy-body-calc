@@ -4,6 +4,19 @@
       <h2 class="genetic-potential__title">
         Calculate genetic potential bellow:
       </h2>
+      <transition name="rotate">
+        <div v-if="result" key="result" class="genetic-potential__result">
+          <p>Chest: {{ result.chest }}</p>
+          <p>Upper Arm: {{ result.upperArm }}</p>
+          <p>Fore Arm: {{ result.foreArm }}</p>
+          <p>Neck: {{ result.neck }}</p>
+          <p>Thigh: {{ result.thigh }}</p>
+          <p>Calf: {{ result.calf }}</p>
+        </div>
+        <div v-else key="form" class="genetic-potential__form-container">
+          <GeneticPotentialForm @result="setResult" />
+        </div>
+      </transition>
     </section>
     <aside class="explanation-section">
       <AppExplanation>
@@ -46,19 +59,30 @@
 
 <script lang="ts">
 import AppExplanation from '@/components/common/AppExplanation.vue'
-import { defineComponent } from '@nuxtjs/composition-api'
+import GeneticPotentialForm from '@/components/genetic-potential/GeneticPotentialForm.vue'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 import frag from 'vue-frag'
 import { SITE_MAP } from '@/constants/siteMap'
+import { IGeneticPotentialResult } from '@/types/geneticPotential'
 
 export default defineComponent({
   name: 'GeneticPotential',
   components: {
     AppExplanation,
+    GeneticPotentialForm,
   },
   directives: { frag },
   setup() {
+    const result = ref<IGeneticPotentialResult | undefined>()
+
+    function setResult(geneticPotential: IGeneticPotentialResult) {
+      result.value = geneticPotential
+    }
+
     return {
       SITE_MAP,
+      setResult,
+      result,
     }
   },
 })
