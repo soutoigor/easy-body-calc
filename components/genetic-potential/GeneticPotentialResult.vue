@@ -50,7 +50,7 @@ export default defineComponent({
 
 <style scoped>
 .genetic-potential-result {
-  @apply border border-turbo rounded-lg h-auto p-3 w-full;
+  @apply border border-turbo rounded-lg h-auto p-4 w-full;
   @apply flex-col items-center;
 }
 
