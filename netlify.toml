@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/"
+  from = "https://easy-body-calc.netlify.app/:splat"
   to = "https://bodycalc.fit/:splat"
   status = 301
