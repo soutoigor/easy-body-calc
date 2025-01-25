@@ -8,7 +8,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-818456123404801',
+        src:
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-818456123404801',
         crossorigin: 'anonymous',
         async: true,
       },
